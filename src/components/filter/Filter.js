@@ -1,22 +1,14 @@
-import { Component } from 'react';
-
-class Filter extends Component {
-  handleSeacrh = evt => {
-    this.props.onSearch(evt.target.value);
+const Filter = ({ onSearch }) => {
+  const handleSeacrh = evt => {
+    onSearch(evt.target.value);
   };
 
-  render() {
-    return (
-      <label>
-        Find contacts by name
-        <input
-          name="search"
-          placeholder="Search..."
-          onChange={this.handleSeacrh}
-        />
-      </label>
-    );
-  }
-}
+  return (
+    <label>
+      Find contacts by name
+      <input name="search" placeholder="Search..." onChange={handleSeacrh} />
+    </label>
+  );
+};
 
 export default Filter;
